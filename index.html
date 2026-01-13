@@ -1,380 +1,350 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sahilpreet Singh Sandhu — Data Analyst Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta name="description" content="Sahilpreet Singh Sandhu — Data Analyst | Power BI Specialist — Portfolio" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahilpreet Singh Sandhu | Data Analyst</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root{
-      --bg:#0b0b0b;
-      --card:#0f1724;
-      --glass: rgba(255,255,255,0.06);
-      --accent:#2447ff; /* royal blue */
-      --muted:#9aa4b2;
-      --glass-border: rgba(255,255,255,0.08);
-      --glass-glow: 0 6px 30px rgba(36,71,255,0.08);
-      --glass-strong: rgba(255,255,255,0.09);
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color-scheme: dark;
+    :root {
+      --bg: #0b0d10;
+      --card: #11141a;
+      --muted: #9aa4b2;
+      --text: #e6eaf0;
+      --accent: #2f6bff;
+      --border: rgba(255,255,255,0.08);
+      --radius: 18px;
     }
-    html {
-      font-size: 24px; /* Increased base font */
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #111633 0%, transparent 60%),
+                  radial-gradient(1000px 500px at 90% 10%, #0f1a3d 0%, transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#040405 0%, #0b0b0b 100%);color:#e6eef8}
-    a{color:inherit;text-decoration:none}
-    .container{width:100%;padding:28px} /* full width */
 
-    /* Navbar */
-    header{position:sticky;top:12px;z-index:60}
-    .nav{backdrop-filter:blur(8px);background:linear-gradient(180deg, rgba(11,11,11,0.6), rgba(11,11,11,0.35));border:1px solid var(--glass-border);box-shadow:var(--glass-glow);border-radius:14px;padding:14px}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:50px;height:50px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#0080ff);display:grid;place-items:center;font-weight:800;color:white;box-shadow:0 6px 18px rgba(36,71,255,0.12)}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
-    nav li a{padding:10px 14px;border-radius:8px;font-weight:600;opacity:0.95;font-size:1.1rem}
-    nav li a:hover{background:linear-gradient(90deg, rgba(36,71,255,0.12), rgba(0,128,255,0.06));box-shadow:0 6px 20px rgba(36,71,255,0.06)}
-    .cta{display:flex;gap:10px}
-    .btn{background:linear-gradient(90deg,var(--accent),#0066ff);padding:10px 16px;border-radius:12px;color:white;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(36,71,255,0.12);transition:transform .22s;font-size:1.05rem}
-    .btn:active{transform:translateY(1px)}
+    a { text-decoration: none; color: inherit; }
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 400px;gap:36px;align-items:center;padding:80px 0}
-    .intro h1{font-family:'Fraunces',serif;font-size:48px;margin:0}
-    .intro p.lead{color:var(--muted);margin-top:16px;line-height:1.8;font-size:1.25rem}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:22px;border:1px solid var(--glass-border);box-shadow:var(--glass-glow);display:flex;flex-direction:column;gap:16px}
-    .avatar{width:100%;height:360px;border-radius:12px;background:linear-gradient(180deg,#07102a, #0b1220);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.02)}
-    .avatar img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:6px solid rgba(255,255,255,0.04)}
-    .role{display:flex;gap:10px;align-items:center;color:var(--muted);font-weight:600;font-size:1.1rem}
-    .badges{display:flex;gap:10px;flex-wrap:wrap}
-    .badge{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-weight:600;font-size:0.95rem}
+    /* ---------- NAVBAR ---------- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: rgba(11,13,16,0.75);
+      border-bottom: 1px solid var(--border);
+    }
 
-    /* Sections */
-    section{margin:64px 0}
-    .glass{background:var(--glass);border-radius:14px;padding:22px;border:1px solid var(--glass-border);box-shadow:var(--glass-glow)}
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    /* Skills */
-    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .skill-card{padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03);min-height:140px}
-    .skill-card h4{margin:10px 0 8px;font-size:1.3rem}
-    .skill-list{display:flex;flex-direction:column;gap:10px}
-    .skill-row{display:flex;justify-content:space-between;gap:14px;align-items:center;font-size:1rem}
-    .bar{flex:1;height:12px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;margin-left:14px}
-    .bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#00b0ff);border-radius:999px;transition:width 1s cubic-bezier(.2,.9,.3,1)}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+    }
 
-    /* Projects */
-    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .project{border-radius:12px;padding:0;overflow:hidden;border:1px solid rgba(255,255,255,0.04);transition:transform .35s, box-shadow .35s;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02))}
-    .project:hover{transform:translateY(-8px);box-shadow:0 18px 50px rgba(2,6,23,0.6)}
-    .proj-media{height:180px;background-size:cover;background-position:center}
-    .proj-body{padding:16px}
-    .proj-body h3{font-size:1.35rem;margin:6px 0}
-    .proj-body p{font-size:1.05rem;margin:8px 0}
-    .proj-tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .chip{font-size:14px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
-    .proj-actions{display:flex;gap:10px;margin-top:14px}
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #6fa3ff);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
 
-    /* Certifications / Resume */
-    .cert-list{display:flex;gap:14px;flex-wrap:wrap}
-    .cert{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(36,71,255,0.06), rgba(36,71,255,0.03));border:1px solid rgba(36,71,255,0.14);box-shadow:0 10px 30px rgba(36,71,255,0.06);min-width:220px;font-size:1rem}
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-weight: 500;
+      color: var(--muted);
+    }
 
-    /* Footer */
-    footer{padding:22px;text-align:center;color:var(--muted);font-size:1rem}
+    .nav-links a:hover { color: var(--text); }
 
-    /* Responsive */
-    @media (max-width:1000px){.hero{grid-template-columns:1fr 340px}.skills-grid{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:700px){.nav-inner{flex-direction:column;gap:12px}.hero{grid-template-columns:1fr;gap:24px}.projects-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.avatar{height:280px}.hero-card{padding:16px}}
+    .btn {
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #5b8cff);
+      border: none;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-    /* subtle entrance animations */
-    .fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .7s forwards}
-    @keyframes fadeUp{to{opacity:1;transform:none}}
+    /* ---------- GLOBAL ---------- */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 20px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 36px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent), var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 800;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero h2 {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 10px 0 20px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 50%;
+      background: radial-gradient(circle at top, #3b6cff, #0f1c3f);
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      font-weight: 700;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .skill { margin-bottom: 14px; }
+
+    .bar {
+      height: 8px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #6fa3ff);
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .project img {
+      width: 100%;
+      height: 160px; /* shorter tile height */
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* ---------- CERTIFICATIONS ---------- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      text-align: center;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="nav glass fade-up">
-        <div class="nav-inner">
-          <div class="brand">
-            <div class="logo">SS</div>
-            <div>
-              <div style="font-weight:700;font-size:1.2rem">Sahilpreet Singh Sandhu</div>
-              <div style="font-size:14px;color:var(--muted)">Data Analyst • Power BI Specialist</div>
-            </div>
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#certs">Certifications</a></li>
-            </ul>
-          </nav>
-          <div class="cta">
-            <a class="btn" href="#resume">Resume</a>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero">
-        <div class="intro fade-up">
-          <h1>Hi — I'm <span style="color:var(--accent)">Sahilpreet</span></h1>
-          <div class="role">Data Analyst | Power BI Specialist</div>
-          <p class="lead">Microsoft Certified Power BI Data Analyst Associate (PL-300). I build analytics dashboards, transform data pipelines, and deliver actionable insights using Power BI, Python and SQL. I care about clean design, fast performance, and storytelling with data.</p>
-          <div style="margin-top:18px;display:flex;gap:12px">
-            <a class="btn" href="/assets/Sahilpreet_CV.pdf" download>Download CV</a>
-          </div>
-          <div style="margin-top:22px;display:flex;gap:8px;align-items:center">
-            <div class="badges">
-              <span class="badge">PL-300</span>
-              <span class="badge">Power BI</span>
-              <span class="badge">Python</span>
-              <span class="badge">SQL</span>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-card fade-up">
-          <div class="avatar">
-            <!-- Replace with your photo -->
-            <img src="Img/Professional_Image.png" alt="Sahilpreet">
-          </div>
-
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div style="font-weight:700;font-size:1.1rem">Contact</div>
-              <div style="font-size:14px;color:var(--muted)">sahilsandhu7655@gmail.com</div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-weight:700;font-size:18px">PL-300</div>
-              <div style="font-size:14px;color:var(--muted)">Microsoft Certified</div>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="glass fade-up">
-          <h2 style="font-size:2rem">About Me</h2>
-          <p style="color:var(--muted);font-size:1.15rem">I'm Sahilpreet Singh Sandhu — a data analyst passionate about turning raw data into clear, actionable stories. With hands-on experience in Power BI, Python and SQL, I work end-to-end — from data cleaning and modeling to visualization and stakeholder delivery. Certified PL-300 (Microsoft Power BI Data Analyst Associate), I favour pragmatic solutions, design-first dashboards, and automated data pipelines.</p>
-          <ul style="color:var(--muted);margin-top:12px;font-size:1.05rem">
-            <li>Experience with designing interactive Power BI dashboards and DAX optimization.</li>
-            <li>Proficient in Python (pandas, matplotlib, seaborn) for ETL & analysis.</li>
-            <li>SQL (PostgreSQL, MySQL) for data modelling and querying.</li>
-            <li>Excel power-user — advanced formulas, pivot tables and Power Query.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills">
-        <h2 style="font-size:2rem">Skills</h2>
-        <div class="skills-grid" style="margin-top:14px">
-          <!-- Skill cards (unchanged structure) -->
-          <div class="skill-card glass fade-up">
-            <h4>Data Analytics</h4>
-            <div class="skill-list">
-              <div class="skill-row"><strong>Power BI</strong><div class="bar" data-val="95"><i></i></div></div>
-              <div class="skill-row"><strong>Data Modeling</strong><div class="bar" data-val="90"><i></i></div></div>
-              <div class="skill-row"><strong>DAX</strong><div class="bar" data-val="86"><i></i></div></div>
-            </div>
-          </div>
-
-          <div class="skill-card glass fade-up">
-            <h4>Programming</h4>
-            <div class="skill-list">
-              <div class="skill-row"><strong>Python (pandas)</strong><div class="bar" data-val="85"><i></i></div></div>
-              <div class="skill-row"><strong>Visualization</strong><div class="bar" data-val="80"><i></i></div></div>
-              <div class="skill-row"><strong>HTML / JS / CSS</strong><div class="bar" data-val="70"><i></i></div></div>
-            </div>
-          </div>
-
-          <div class="skill-card glass fade-up">
-            <h4>Databases & Tools</h4>
-            <div class="skill-list">
-              <div class="skill-row"><strong>SQL (Postgres, MySQL)</strong><div class="bar" data-val="88"><i></i></div></div>
-              <div class="skill-row"><strong>Excel</strong><div class="bar" data-val="92"><i></i></div></div>
-              <div class="skill-row"><strong>AI Tools</strong><div class="bar" data-val="78"><i></i></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:16px;display:flex;gap:14px;flex-wrap:wrap" class="fade-up">
-          <div class="glass cert" style="min-width:200px">
-            <div style="font-weight:700">Microsoft Certified</div>
-            <div style="color:var(--muted);margin-top:6px">Power BI Data Analyst Associate (PL-300)</div>
-          </div>
-          <div class="glass cert" style="min-width:200px">
-            <div style="font-weight:700">Tools</div>
-            <div style="color:var(--muted);margin-top:6px">Power BI, Python, SQL, Excel, GitHub Copilot, ChatGPT</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects">
-        <h2 style="font-size:2rem">Selected Projects</h2>
-        <div class="projects-grid" style="margin-top:16px">
-          <!-- Projects (unchanged structure) -->
-          <article class="project fade-up">
-            <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&s=placeholder')"></div>
-            <div class="proj-body">
-              <h3>Sales Performance Dashboard</h3>
-              <p style="color:var(--muted);margin:6px 0">Interactive Power BI dashboard with regional KPIs, time-series forecasting and drill-through pages. Optimized DAX measures for speedy performance.</p>
-              <div class="proj-tools">
-                <span class="chip">Power BI</span>
-                <span class="chip">DAX</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div class="proj-actions">
-                <a class="btn" href="#">Live</a>
-                <a class="btn" href="#">Demo</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- New Projects are here, starts here -->
-          <article class="project fade-up">
-            <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&s=placeholder')"></div>
-            <div class="proj-body">
-              <h3>Sales Performance Dashboard</h3>
-              <p style="color:var(--muted);margin:6px 0">Interactive Power BI dashboard with regional KPIs, time-series forecasting and drill-through pages. Optimized DAX measures for speedy performance.</p>
-              <div class="proj-tools">
-                <span class="chip">Power BI</span>
-                <span class="chip">DAX</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div class="proj-actions">
-                <a class="btn" href="#">Live</a>
-                <a class="btn" href="#">Demo</a>
-              </div>
-            </div>
-          </article>
-          <article class="project fade-up">
-            <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&s=placeholder')"></div>
-            <div class="proj-body">
-              <h3>Sales Performance Dashboard</h3>
-              <p style="color:var(--muted);margin:6px 0">Interactive Power BI dashboard with regional KPIs, time-series forecasting and drill-through pages. Optimized DAX measures for speedy performance.</p>
-              <div class="proj-tools">
-                <span class="chip">Power BI</span>
-                <span class="chip">DAX</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div class="proj-actions">
-                <a class="btn" href="#">Live</a>
-                <a class="btn" href="#">Demo</a>
-              </div>
-            </div>
-          </article>
-          <article class="project fade-up">
-            <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&s=placeholder')"></div>
-            <div class="proj-body">
-              <h3>Sales Performance Dashboard</h3>
-              <p style="color:var(--muted);margin:6px 0">Interactive Power BI dashboard with regional KPIs, time-series forecasting and drill-through pages. Optimized DAX measures for speedy performance.</p>
-              <div class="proj-tools">
-                <span class="chip">Power BI</span>
-                <span class="chip">DAX</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div class="proj-actions">
-                <a class="btn" href="#">Live</a>
-                <a class="btn" href="#">Demo</a>
-              </div>
-            </div>
-          </article>
-          <article class="project fade-up">
-            <div class="proj-media" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&s=placeholder')"></div>
-            <div class="proj-body">
-              <h3>Sales Performance Dashboard</h3>
-              <p style="color:var(--muted);margin:6px 0">Interactive Power BI dashboard with regional KPIs, time-series forecasting and drill-through pages. Optimized DAX measures for speedy performance.</p>
-              <div class="proj-tools">
-                <span class="chip">Power BI</span>
-                <span class="chip">DAX</span>
-                <span class="chip">SQL</span>
-              </div>
-              <div class="proj-actions">
-                <a class="btn" href="#">Live</a>
-                <a class="btn" href="#">Demo</a>
-              </div>
-            </div>
-          </article>
-          <!-- New Projects end here -->
-
-          <!-- Repeat other projects as in original code -->
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS & RESUME -->
-      <section id="certs">
-        <h2 style="font-size:2rem">Certifications & Resume</h2>
-        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:14px">
-          <div class="glass cert">
-            <div style="font-weight:700">Microsoft Certified: Power BI Data Analyst Associate</div>
-            <div style="color:var(--muted);margin-top:8px">Exam: PL-300 — Achieved</div>
-          </div>
-
-          <div class="glass cert">
-            <div style="font-weight:700">Other</div>
-            <div style="color:var(--muted);margin-top:8px">Training: Data Visualization, SQL Optimization</div>
-          </div>
-
-          <div id="resume" class="glass cert" style="display:flex;flex-direction:column;justify-content:space-between">
-            <div>
-              <div style="font-weight:700">Resume</div>
-              <div style="color:var(--muted);margin-top:8px">Short summary of experience and key strengths. Click below to download the full PDF.</div>
-            </div>
-            <div style="margin-top:12px;display:flex;gap:8px">
-              <a class="btn" href="/assets/Sahilpreet_CV.pdf" download>Download PDF</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="fade-up">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-        <div>© <strong>Sahilpreet Singh Sandhu</strong> — Data Analyst</div>
-        <div style="color:var(--muted)">Built with care • PL-300 certified</div>
-      </div>
-    </footer>
-
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-container">
+    <div class="brand">
+      <div class="logo">SS</div>
+      Sahilpreet Singh Sandhu
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="btn">Resume</button>
   </div>
+</nav>
 
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', function(e){
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});} }
-    ));
+<!-- HERO / INTRO -->
+<section id="home">
+  <div class="hero">
+    <div>
+      <h1>Hi — I'm <span>Sahilpreet</span></h1>
+      <h2>Data Analyst | Power BI Specialist</h2>
+      <p>Microsoft Certified Power BI Data Analyst Associate (PL-300). I design analytics dashboards, optimize data models, and turn raw data into actionable insights using Power BI, Python, and SQL.</p>
+      <div class="tags">
+        <span class="tag">PL-300</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Python</span>
+        <span class="tag">SQL</span>
+      </div>
+      <button class="btn">Download CV</button>
+    </div>
+    <div class="card profile">
+      <img src="Professional_Img.png" class="avatar"></img>
+      <p style="margin-top:12px">sahilsandhu7655@gmail.com</p>
+    </div>
+  </div>
+</section>
 
-    // Animate skill bars when visible
-    const bars = document.querySelectorAll('.bar');
-    function animateBars(){
-      bars.forEach(b=>{
-        const val = b.getAttribute('data-val') || 60;
-        const inner = b.querySelector('i');
-        inner.style.width = val + '%';
-      })
-    }
-    // Intersection observer for fade-up
-    const faders = document.querySelectorAll('.fade-up');
-    const obs = new IntersectionObserver((entries,obsr)=>{
-      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); en.target.style.animationDelay = '0s'; en.target.style.opacity = 1; en.target.style.transform = 'none'; obsr.unobserve(en.target); }});
-    },{threshold:0.12});
-    faders.forEach(f=>obs.observe(f));
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="card">
+    <p>
+      I am a detail-oriented Data Analyst with a strong foundation in data modeling, visualization, and business intelligence. I specialize in transforming raw datasets into meaningful insights that support data-driven decision-making.
+    </p>
+    <br />
+    <p>
+      My primary expertise lies in <strong>Power BI</strong>, where I build interactive dashboards using optimized DAX measures and clean data models. I also work comfortably with <strong>SQL</strong> for querying and data validation, and <strong>Python</strong> for analysis and automation.
+    </p>
+    <br />
+    <p>
+      I am Microsoft <strong>PL-300 certified</strong> and continuously upskilling to stay aligned with modern analytics and BI practices. I enjoy solving real-world business problems through data and presenting insights in a clear, impactful way.
+    </p>
+  </div>
+</section>
 
-    // Run bars animation slightly after page load
-    window.addEventListener('load', ()=>setTimeout(animateBars,400));
-  </script>
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="card">
+      <h3>Data Analytics</h3>
+      <div class="skill">Power BI<div class="bar"><span style="width:90%"></span></div></div>
+      <div class="skill">Data Modeling<div class="bar"><span style="width:85%"></span></div></div>
+      <div class="skill">DAX<div class="bar"><span style="width:88%"></span></div></div>
+    </div>
+    <div class="card">
+      <h3>Programming</h3>
+      <div class="skill">Python<div class="bar"><span style="width:80%"></span></div></div>
+      <div class="skill">Visualization<div class="bar"><span style="width:78%"></span></div></div>
+      <div class="skill">HTML / CSS / JS<div class="bar"><span style="width:70%"></span></div></div>
+    </div>
+    <div class="card">
+      <h3>Databases & Tools</h3>
+      <div class="skill">SQL<div class="bar"><span style="width:85%"></span></div></div>
+      <div class="skill">Excel<div class="bar"><span style="width:90%"></span></div></div>
+      <div class="skill">AI Tools<div class="bar"><span style="width:75%"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+    <div class="card project">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="Project">
+      <h3>Sales Performance Dashboard</h3>
+      <p>Interactive Power BI dashboard with regional KPIs, forecasting, and optimized DAX measures.</p>
+      <button class="btn">Live</button>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-grid">
+    <div class="card">
+      <h3>Microsoft Certified: Power BI Data Analyst Associate</h3>
+      <p>PL-300 — Achieved</p>
+    </div>
+    <div class="card">
+      <h3>Other Training</h3>
+      <p>Data Visualization, SQL Optimization</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2 class="section-title">Contact</h2>
+  <p>Email: sahilsandhu7655@gmail.com</p>
+</section>
+
+<footer>
+  © Sahilpreet Singh Sandhu — Data Analyst • PL-300 Certified
+</footer>
+
 </body>
 </html>
