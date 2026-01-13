@@ -153,11 +153,17 @@
       height: 150px;
       margin: auto;
       border-radius: 50%;
+      overflow: hidden;
       background: radial-gradient(circle at top, #3b6cff, #0f1c3f);
       display: grid;
       place-items: center;
-      font-size: 42px;
-      font-weight: 700;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
     }
 
     /* ---------- SKILLS ---------- */
@@ -259,7 +265,7 @@
       <button class="btn">Download CV</button>
     </div>
     <div class="card profile">
-      <img src="Professional_Img.png" class="avatar"></img>
+      <div class="avatar"><img src="Professional_Img.png" alt="Sahilpreet Singh Sandhu" class="avatar-img"></div>
       <p style="margin-top:12px">sahilsandhu7655@gmail.com</p>
     </div>
   </div>
