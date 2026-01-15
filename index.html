@@ -218,9 +218,87 @@
     }
 
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
       .cert-grid { grid-template-columns: 1fr; }
     }
+
+    /* ===============================
+   RESPONSIVE FIXES
+   =============================== */
+
+@media (max-width: 1024px) {
+  section {
+    padding: 70px 16px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .profile {
+    margin-top: 30px;
+  }
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav .btn {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero h2 {
+    font-size: 16px;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
   </style>
 </head>
 <body>
